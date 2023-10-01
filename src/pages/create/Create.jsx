@@ -14,7 +14,7 @@ const Create = () => {
   const [img, setImg] = useState("")
   const [category, setCategory] = useState("")
   const navigate = useNavigate()
-  const [url, setUrl] = useState(null);
+  var [url, setUrl] = useState(null);
   const { token } = useSelector((state) => state.auth)
 
   const categories = [
@@ -46,6 +46,7 @@ const Create = () => {
         console.log(res.data.url);
         const temp = res.data.url;
         console.log(temp);
+        url = temp;
         await setUrl(res.data.url);
         alert("Image uploaded Succesfully");
       })
@@ -82,9 +83,9 @@ const Create = () => {
       setCategory("Nature")
       console.log(url);
       console.log(category);
-      // const data = await request('/blog', "POST", options, body)
-      // console.log(data);
-      // navigate(`/blogDetails/${data._id}`)
+      const data = await request('/blog', "POST", options, body)
+      console.log(data);
+      navigate(`/blogDetails/${data._id}`)
 
     } catch (error) {
       console.error(error)
