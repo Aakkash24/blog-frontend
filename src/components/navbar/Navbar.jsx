@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classes from "./navbar.module.css"
 import {Link} from "react-router-dom"
-import womanImg from "../../assets/profile_img.jpg"
+import profileImg from "../../assets/profile_img.jpg"
 import { useDispatch } from 'react-redux'
 import { logout } from '../../redux/auth'
 import { useNavigate } from 'react-router-dom'
@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
-          <Link to='/'>Aakkash</Link>
+          <Link to='/'>Ethereal Essays</Link>
         </div>
         <ul className={classes.center}>
           <li className={classes.listItem}><Link to='/'>Home</Link></li>
@@ -31,7 +31,7 @@ const Navbar = () => {
           <li className={classes.listItem}><Link to='/category'>Categories</Link></li>
         </ul>
         <div className={classes.right}>
-          <img onClick={() => setShowModal(prev => !prev)} src={womanImg} className={classes.img}/>
+          <img onClick={() => setShowModal(prev => !prev)} src={profileImg} className={classes.img}/>
           { showModal && 
             <div className={classes.modal}>
               <Link to="/create">Create</Link>
