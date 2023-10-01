@@ -1,0 +1,66 @@
+.container{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../../assets/reg-bkd.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    height: 62vh;
+    width: 28vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+}
+
+.wrapper > h2{
+    color: #020e42;
+    text-align: center;
+    margin:2.5rem;
+    font-size: 35px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #020e42;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #020e42;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transition: 0.5s;
+    background-color: #194274;
+  }
+
+a{
+    text-decoration: none;
+}

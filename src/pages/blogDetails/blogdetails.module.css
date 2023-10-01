@@ -1,0 +1,110 @@
+.container{
+    min-height: calc(100vh - 60px);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.wrapper{
+    max-width:1000px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.goBack{
+    position: absolute;
+    text-decoration: none;
+    color: #020e42;
+    top:5rem;
+    left:5rem;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper > img{
+    height: 450px;
+    object-fit: cover;
+}
+
+
+.titleAndControls{
+    margin-top:1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.controls{
+    display: flex;
+    align-items: center;
+    gap:1rem
+}
+
+.controls > .edit{
+    padding: 0.4rem 0.75rem;
+    background-color: #020e42;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.controls > .delete{
+    cursor: pointer;
+    padding: 0.4rem 0.75rem;
+    background-color: #020e42;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.like{
+    padding: 0.4rem 0.75rem;
+    border-radius: 12px;
+    background-color: #020e42;
+    color: #fff;
+}
+
+.title{
+    font-size: 25px;
+    color: #020e42;
+}
+
+.descAndLikesViews{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    color:#020e42;
+    font-size:15px;
+    line-height: 25px;
+}
+
+.desc > span{
+    color:#020e42;
+    font-size: 20px;
+}
+
+.likesAndViews{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    align-items: flex-end;
+}
+
+.authorAndCreatedAt{
+    display: flex;
+    justify-content: space-between;
+    color:#020e42;
+    font-size: 16px;
+}
+
+.authorAndCreatedAt > span > span{
+    font-size: 15px;
+    color: #020e42;
+    font-weight: bold;
+}

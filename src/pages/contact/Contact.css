@@ -1,0 +1,58 @@
+/* src/components/Contact.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+.contact-container {
+  padding: 40px;
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.contact-content h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-content p {
+  margin-bottom: 16px;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 16px;
+}
+
+.contact-form .form-group label {
+  font-weight: bold;
+}
+
+.contact-form .form-control {
+  width: 100%;
+}
+
+.contact-form button {
+  width: 100%;
+}

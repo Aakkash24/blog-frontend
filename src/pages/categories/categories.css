@@ -1,0 +1,47 @@
+/* src/components/Categories.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+.categories-container {
+  padding: 40px;
+}
+
+.categories-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 10px;
+  width: 250px;
+}
+
+.category-card i {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.category-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.category-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.category-card a {
+  text-decoration: none;
+}
