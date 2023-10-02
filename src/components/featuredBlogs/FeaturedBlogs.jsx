@@ -4,8 +4,8 @@ import {AiFillLike} from "react-icons/ai"
 import "./featuredBlogs.css"
 
 const FeaturedBlogs = () => {
-  const img1 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696232607/1696231957803.jpg";
-  const img2 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696232607/1696231957803.jpg";
+  const img1 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696233260/1696231957803.jpg";
+  const img2 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696233423/1696231957803.jpg";
   const img3 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696146852/1696145857715.jpg";
 
   return (

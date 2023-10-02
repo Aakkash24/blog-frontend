@@ -18,6 +18,7 @@ const Create = () => {
   const { token } = useSelector((state) => state.auth)
 
   const categories = [
+    "select",
     'nature',
     'music',
     'travel',
@@ -45,10 +46,17 @@ const Create = () => {
       .then(async (res) => {
         console.log(res.data.url);
         const temp = res.data.url;
-        console.log(temp);
-        url = temp;
-        await setUrl(res.data.url);
-        alert("Image uploaded Succesfully");
+        const jpgRegex = /\.jpg$/i; 
+        console.log(jpgRegex.test(temp))
+        if(!jpgRegex.test(temp))
+          alert("Choose different image");
+        else
+        {
+          console.log(temp);
+          url = temp;
+          await setUrl(res.data.url);
+          alert("Image uploaded Succesfully");
+        }
       })
       .catch(console.log);
   }
@@ -81,12 +89,18 @@ const Create = () => {
       }
       if(category.length==0)
       setCategory("Nature")
+      if(title.length==0 || desc.length==0 || category.length==0 || url.length==0)
+      {
+        alert("Fill all the inputs");
+      }
+      else{
       console.log(url);
+      console.log(category.length)
       console.log(category);
       const data = await request('/blog', "POST", options, body)
       console.log(data);
       navigate(`/blogDetails/${data._id}`)
-
+      }
     } catch (error) {
       console.error(error)
     }
@@ -127,7 +141,7 @@ const Create = () => {
             </div>
             <div className={classes.inputWrapperImg}>
               <label htmlFor='image' className={classes.labelFileInput}>
-                Image: <span>Upload here</span>
+                Image: <span>Upload here(Only JPG)</span>
               </label>
               <input
                 id="image"

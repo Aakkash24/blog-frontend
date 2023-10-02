@@ -17,6 +17,7 @@ const UpdateBlog = () => {
   const { id } = useParams()
 
   const categories = [
+    "select",
     'nature',
     'music',
     'travel',
