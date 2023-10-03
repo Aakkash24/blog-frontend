@@ -12,6 +12,7 @@ const Create = () => {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
   const [img, setImg] = useState("")
+  const [imgId, setImgId] = useState("")
   const [category, setCategory] = useState("")
   const navigate = useNavigate()
   var [url, setUrl] = useState(null);
@@ -40,9 +41,20 @@ const Create = () => {
     });
   };
 
+  const converToBase64 = async(e) =>{
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = () =>{
+      setImg(reader.result);
+    };
+    reader.onerror = error =>{
+      console.log("Error:",error);
+    }
+  }
+
   const uploadSingleImage =  async(base64) => {
     await axios
-      .post("https://blog-backend-temp.vercel.app/blog/uploadImage", { image: base64 })
+      .post("https://blog-backend-temp-6yblp1oet-aakkashs-projects-de69e132.vercel.app/uploadImage", { image: base64 })
       .then(async (res) => {
         console.log(res.data.url);
         const temp = res.data.url;
@@ -61,6 +73,23 @@ const Create = () => {
       .catch(console.log);
   }
 
+  const uploadImage = async() =>{
+    await fetch("https://blog-backend-temp-6yblp1oet-aakkashs-projects-de69e132.vercel.app/blog/uploadImage",{
+      method:"POST",
+      crossDomain:true,
+      headers:{
+        "Content-Type":"application/json",
+        Accept:"application/json",
+        "Access-Control-Allow-Origin":"*"
+      },
+      body: JSON.stringify({
+        base64:img
+      })
+    }).then((res) => res.json())
+    .then((data) => {console.log(data.data);
+      setImgId(data.data)})
+  }
+
   const onChangeFile = async(e) => {
     await setImg(e.target.files[0])
   }
@@ -74,8 +103,8 @@ const Create = () => {
 
     try {
       if (img) {
-        const base64 = await convertBase64(img);
-        await uploadSingleImage(base64);
+        await uploadImage();
+        console.log(imgId);
       } 
       const options = {
         'Content-Type': 'application/json',
@@ -85,18 +114,22 @@ const Create = () => {
         title,
         desc,
         category,
-        photo: url
+        photo: imgId
       }
       if(category.length==0)
       setCategory("Nature")
-      if(title.length==0 || desc.length==0 || category.length==0 || url.length==0)
+      if(title.length==0 || desc.length==0 || category.length==0 || imgId.length == 0)
       {
+        console.log(title);
+        console.log(desc);
+        console.log(category);
+        console.log(imgId);
         alert("Fill all the inputs");
       }
       else{
-      console.log(url);
       console.log(category.length)
       console.log(category);
+      console.log(typeof imgId);
       const data = await request('/blog', "POST", options, body)
       console.log(data);
       navigate(`/blogDetails/${data._id}`)
@@ -148,7 +181,7 @@ const Create = () => {
                 type="file"
                 accept='image/*'
                 className={classes.input}
-                onChange={onChangeFile}
+                onChange={converToBase64}
                 style={{ display: 'none' }}
               />
               {img && <p className={classes.imageName}>{img.name} <AiOutlineCloseCircle className={classes.closeIcon} onClick={() => handleCloseImg()} /></p>}

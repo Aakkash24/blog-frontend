@@ -4,9 +4,9 @@ import {AiFillLike} from "react-icons/ai"
 import "./featuredBlogs.css"
 
 const FeaturedBlogs = () => {
-  const img1 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696233260/1696231957803.jpg";
-  const img2 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696233423/1696231957803.jpg";
-  const img3 = "https://res.cloudinary.com/dmfcoexcm/image/upload/v1696146852/1696145857715.jpg";
+  const img1 = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/09/23/12/north-east-night-sky-8.jpg?quality=75&width=640&height=614&fit=bounds&format=pjpg&crop=16%3A9%2Coffset-y0.5&auto=webp";
+  const img2 = "https://m.economictimes.com/thumb/msid-100785841,width-6720,height-4480,resizemode-4,imgsize-1157658/best-gaming-chairs-in-india.jpg";
+  const img3 = "https://variety.com/wp-content/uploads/2022/07/Music-Streaming-Wars.jpg?w=1024";
 
   return (
     <div className="container">

@@ -1,4 +1,4 @@
-const BASE_URL = "https://blog-backend-temp.vercel.app"
+const BASE_URL = "https://blog-backend-temp-6yblp1oet-aakkashs-projects-de69e132.vercel.app"
 
 const request = async (url, method, headers, body, isNotStringified = false) => {
     let res
