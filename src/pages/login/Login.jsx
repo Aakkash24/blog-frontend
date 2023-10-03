@@ -23,8 +23,10 @@ const Login = () => {
       const data = await request('/user/login',"POST",options,{ email, password})
       console.log(data);
       dispatchEvent(login(data));
+      alert("Login Successful")
       navigate("/");
     } catch (error) {
+      alert("Invalid credentials")
       console.log(error);
     }
   }

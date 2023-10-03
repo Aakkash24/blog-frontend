@@ -52,8 +52,10 @@ const UpdateBlog = () => {
     }
       const data = await request(`/blog/updateBlog/${id}`, "PUT", options, {title, desc, category})
       console.log(data);
+      alert("Blog updation successful")
       navigate(`/blogDetails/${id}`)
     } catch (error) {
+      alert("Blog updation failed")
       console.error(error)
     }
   }
